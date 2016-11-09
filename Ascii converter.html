@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+	
+<head>
+
+	  
+	<script>
+		//This is the basic format for a function.
+		
+		function myFunction()
+		{
+			//put your code in here.
+			var myStringText = window.prompt("Please enter some text.","Put text here.");
+			ShowOnScreen(myStringText);
+		}
+        //This function is responsible for the completition of the Ascii conversion.
+		function DoAsciiConversion()
+		{
+			var myText = "";
+			var letterArray = new Array();
+			var message = "";
+			
+			try{
+			
+			//Ask user to type one English lowercase word.
+			    myText = window.prompt("type one English lowercase word.","Write Here") ;
+
+			//Take the user's input, processes it, And Convert it into an Array.
+			    letterArray = myText.split("");
+
+			    for (i = 0; i < letterArray.length; i++)
+			{
+			    message = message + GetAsciiCode(letterArray[i]) + ", ";
+			}
+				
+			ShowOnScreen(message);
+			}
+			catch(err)
+			{
+				alert(err);
+			}
+			
+		}
+		
+		//This Function Gives a Numerical Value To Each Lower Case English Letter.
+		function GetAsciiCode(myText)
+		{
+		   var retval;
+		    switch (myText)
+		{
+		case "a":
+		  retval = "97";
+		  break;
+		case "b":
+		  retval = "98";
+		  break;
+		case "c":
+		  retval = "99";
+		   break;
+		case "d":
+		   retval = "100";
+		   break;
+		case "e":
+          retval = "101";
+		  break;
+		case "f":
+		  retval = "102";
+		  break;
+		case "g":
+		  retval = "103";
+		   break;
+		case "h":
+		 retval = "104";
+		  break;
+		case "i":
+		 retval = "105";
+		  break;
+		case "j":
+		 retval = "106";
+		  break;
+		case "k":
+		 retval = "107";
+		  break;
+		case "l":
+		 retval = "108";
+		  break;
+		case "m":
+		 retval = "109";
+		  break;
+		case "n":
+		 retval = "110";
+        case "o":
+		 retval = "111";
+		  break;
+		case "p":
+		 retval = "112";
+		  break;
+		case "q":  
+         retval = "113";
+		 break;
+		case "r":
+		 retval = "114";
+		  break; 
+		case "s":
+		 retval = "115";
+		  break;
+		case "t":
+		 retval = "116";
+		  break;
+		case "u":
+		 retval = "117";
+		  break;
+		case "v":
+		 retval = "118";
+		  break;
+		case "w":
+		 retval = "119";
+		  break;
+		case "x":
+		  retval = "120";
+		   break;
+		case "y":
+		 retval = "121";
+		  break;
+		case "z":
+		  retval = "122";
+		   break;
+		default:
+		  retval = "0";
+		break;
+		
+		}
+		
+		return retval;
+		
+		}
+		/*The next function will display the result on the screen */
+		 function ShowOnScreen(myText)
+		{
+
+		     document.getElementById("DisplayResultsArea").innerHTML = myText;
+
+		 }
+
+	</script>
+</head>
+
+<body>
+	<!-- This code sets the "style" of every button in the body of this HTML documment.
+		In this case, we just set the width.
+		-->
+	<style type="text/css">  
+		button {width:350px}  
+	  </style>  
+
+	<!--This code creates a button that you can use to execute your JavaScript code.-->
+
+	<button onclick="DoAsciiConversion()">Do Conversion</button></br>
+	
+    <!-- This code creates a space to display the results of the "showOnTheScreen" function used above. -->
+	
+
+	<p id="DisplayResultsArea"  style="font-family:'Times New Roman';color:magenta;margin-left:20px;"></p>
+</body>
+</html>
