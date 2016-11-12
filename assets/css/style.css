@@ -311,7 +311,7 @@ header{
   font-family: 'Georgia', Times, Times New Roman, serif;
 }
 header ul {
-
+  line-height: 20px;
   height: 20px;
   
 }
@@ -340,6 +340,9 @@ nav a {
   width: 100%;
   margin: 0 auto;
   overflow:hidden; 
+  line-height: 15px;
+  padding-bottom: 10px;
+
 }
 
 .contact-box {
